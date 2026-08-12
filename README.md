@@ -1,6 +1,6 @@
-# AURA (Antiquity Universal Restoration Automation)
+# **AURA** (Antiquity Universal Restoration Automation)
 
-> Dust Free History
+## **Dust Free History**
 
 ## Table of Contents
 - [Dust Free History](#dust-free-history)
