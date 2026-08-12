@@ -19,7 +19,6 @@
   - [Project Flow](#project-flow)
 - [Key Components](#key-components)
 
-## Dust Free History
 
 ---
 
