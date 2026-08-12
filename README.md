@@ -1,5 +1,22 @@
 # AURA (Antiquity Universal Restoration Automation)
 
+## Table of Contents
+- [Dust Free History](#dust-free-history)
+- [Project Overview](#project-overview)
+- [Team Information](#team-information)
+- [Team Members](#team-members)
+- [Problem Statement](#problem-statement)
+- [Solution](#solution)
+- [Background](#background)
+  - [Existing Solutions](#existing-solutions)
+  - [Why Our Solution Is Superior](#why-our-solution-is-superior)
+  - [How We Conjured This Idea](#how-we-conjured-this-idea)
+- [Project Build Process](#project-build-process)
+  - [Assembly Steps](#assembly-steps)
+  - [How It Works](#how-it-works)
+  - [Project Flow](#project-flow)
+- [Key Components](#key-components)
+
 ## Dust Free History
 
 ---
