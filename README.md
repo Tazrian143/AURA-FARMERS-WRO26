@@ -1,6 +1,8 @@
 # AURA (Antiquity Universal Restoration Automation)
 
-![AURA Project Image](images/car.jpg)
+## Dust Free History
+
+---
 
 ## Project Overview
 AURA is an intelligent robotic cleaning system designed to protect delicate historical artifacts in museums and galleries. It uses a compact vacuum mounted on a robotic arm to remove dust without physically touching the object. The system is equipped with distance and dust sensors to ensure safe, precise, and energy-efficient operation.
@@ -11,16 +13,67 @@ AURA is an intelligent robotic cleaning system designed to protect delicate hist
 **Group:** Junior  
 **Country:** Bangladesh  
 
-**Members:**
-- Md. Mohafizur Rahman
-- Md. Nabhan Nubaid
-- Kazi Tasfia Alam
+## Team Members
+**MD MOHAFIZUR RAHMAN (Leader):** Our leader Mohafizur handled the software part of AURA. He goes to Udayan Higher Secondary School. He reads class 8.
+
+**MD NABHAN NUBAID (2ND MEMBER):** 2nd member and coordinator of hardware and physical components. Compiled the main frame and other hardware-related components. He studies at St. Joseph Higher Secondary School in the 8th grade. He hails from Lalmonirhat, Rangpur but currently resides in Dhaka. He is fond of tomatoes.
+
+**KAZI TASFIA ALAM (3RD MEMBER):** 3rd member, responsible for handling the project documentation and written reports. She is a Grade 7 student at Maple Leaf International School.
 
 ## Problem Statement
 Artifacts in museums and galleries gradually accumulate dust, which can cause chemical degradation and physical damage. Traditional cleaning methods are often slow, labor-intensive, and risky for fragile objects.
 
 ## Solution
 AURA provides a non-contact cleaning solution that detects dust and maintains a safe distance from artifacts. This reduces the risk of damage, lowers manual effort, and improves cleaning efficiency.
+
+## Background
+### Existing Solutions
+#### 1. Traditional Manual Conservation (Current Standard)
+- **How it works:** Trained conservators use soft brushes, low-suction hand-held micro-vacuums, and HEPA-filtered extraction units.
+- **Limitations:** This approach is labor-intensive, slow, expensive, and relies on human skill. It also carries risk of accidental physical contact with fragile surfaces.
+
+#### 2. Commercial Autonomous Floor Cleaners
+- **Examples:** *Pudu Robotics CC1/MT1*, *Gausium Vacuum 40*, *SoftBank Robotics Whiz*.
+- **How it works:** LiDAR- and vision-guided robots roam galleries to sweep, vacuum, and scrub floors.
+- **Limitations:** These systems only clean floor areas and cannot reach elevated display cases, fragile artifacts, or complex 3D surfaces.
+
+#### 3. Industrial Articulated Cleaning Arms
+- **Examples:** Custom 6-DOF robotic arms from KUKA or Universal Robots adapted with soft brushes or suction heads.
+- **How it works:** Fixed robots move along predefined paths to clean specialized surfaces in industrial or display environments.
+- **Limitations:** These systems are costly, bulky, and typically lack autonomous mobility and delicate non-contact sensing for fragile objects.
+
+### Why Our Solution Is Superior
+- **Artifact Safety First:** The VL5303X ToF sensor keeps the nozzle at a safe, non-contact distance from the artifact, avoiding contact and mechanical damage.
+- **Targeted, Energy-Efficient Operation:** The GP2Y1014AU0F dust sensor activates suction only when dust is detected, reducing unnecessary operation and airflow around fragile items.
+- **Precision Cleaning Motion:** The robotic arm reaches the artifact directly and cleans only the dusty areas, minimizing wear and protecting sensitive surfaces.
+
+### How We Conjured This Idea
+We wanted to protect our cultural heritage by creating a practical alternative to manual cleaning and floor-only robots. Artifacts are slowly damaged by dust and improper handling, and current cleaning methods either risk physical contact or cannot reach delicate displays.
+
+By combining precise non-contact distance sensing with optical dust detection, we designed a smart robotic system that cleans only when needed. The result is a safe, no-touch cleaning robot that uses localized suction to remove dust without touching the artifact.
+
+We also considered ultrasonic cleaning because it would avoid physical contact, require less moving machinery, and could cover complex shapes. However, ultrasonic airflow only scatters dust rather than collecting it, so it does not actually clean the surface.
+
+## Project Build Process
+AURA was built by combining a compact mobile base, a lightweight robotic arm, and a smart sensing system. The chassis, motors, sensors, and control board were arranged to deliver precise, low-impact cleaning for fragile museum objects.
+
+### Assembly Steps
+1. Build the acrylic chassis and mount the 12V DC gear motors for the wheels.
+2. Assemble the aluminium robotic arm and attach the MG996R servos at each joint.
+3. Secure the ESP32 controller on the chassis and wire the VL5303X distance sensors and GP2Y1014AU0F dust sensor.
+4. Install the 5015 blower fan and connect it to the nozzle and filter path for suction.
+5. Connect the wheel motors and servos to the L298N motor drivers, then wire the drivers to the ESP32.
+6. Attach the OLED display and configure it to show live system status and sensor readings.
+7. Verify the power wiring, then test the sensor readings, arm movement, and vacuum operation.
+
+### How It Works
+AURA uses the ESP32 to monitor the distance sensors and dust sensor. When dust is detected, the controller activates the blower and moves the arm to clean the surface while keeping the nozzle at a safe distance. The mobile base allows the system to position itself near artifacts, and the OLED displays the current status.
+
+### Project Flow
+- Build → Connect → Test
+- Chassis, motors, and arm assembled first
+- Sensors and controllers wired next
+- System tested for motion, dust detection, and suction
 
 ## Key Components
 | Component | Function | How it Works | Price Range | Image |
