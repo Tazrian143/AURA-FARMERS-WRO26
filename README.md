@@ -68,3 +68,4 @@ The system is built on a lightweight mobile chassis with a three-joint robotic a
 
 ## Conclusion
 AURA aims to support the preservation of cultural heritage through safe, automated, and efficient artifact cleaning.
+
