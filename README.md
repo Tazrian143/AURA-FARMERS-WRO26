@@ -207,3 +207,9 @@ The system is built on a lightweight mobile chassis with a three-joint robotic a
 
 Conclusion
 AURA aims to support the preservation of cultural heritage through safe, automated, and efficient artifact cleaning.
+
+## Sources
+- Research and inspiration from Gemini and Google.
+- Guidance and help from this AI assistant during the README creation process.
+- Project hosting and version control provided through GitHub.
+- Components purchased from Robotics Shop BD and Electronic Shop BD.
