@@ -3,7 +3,6 @@
 ## **Dust Free History**
 
 ## Table of Contents
-- [Dust Free History](#dust-free-history)
 - [Project Overview](#project-overview)
 - [Team Information](#team-information)
 - [Team Members](#team-members)
