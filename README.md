@@ -107,7 +107,7 @@ AURA uses the ESP32 to monitor the distance sensors and dust sensor. When dust i
 | MG996R Servo Motor | Arm joint actuation | Provides torque for the shoulder, elbow, and wrist joints of the robotic arm | ৳650 – ৳750 | ![MG996R](images/servo-motor.jpg) |
 | 12V DC Gear Motor | Mobile drive | Drives the wheels of the mobile chassis with speed and torque suited for the robot base | ৳350 – ৳550 | ![DC Gear Motor](images/car.jpg) |
 | OLED Display (0.96" I2C) | Status display | Shows system status, sensor readings, and operational messages | ৳320 – ৳400 | ![OLED Display](images/display.jpg) |
-| Acrylic Robot Arm Kit | Structural frame | Provides the physical arm structure and mounting points for sensors and servos | ৳1,200 – ৳1,600 | ![Acrylic Arm](images/arm.jpg) |
+| Aluminium Robotic Arm Kit | Structural frame | Provides the physical arm structure and mounting points for sensors and servos | ৳1,200 – ৳1,600 | ![Acrylic Arm](images/arm.jpg) |
 
 ## Component Descriptions
 
@@ -144,8 +144,8 @@ The gear motors drive the robot’s wheels and provide traction for mobility. Th
 ### OLED Display
 The OLED screen shows real-time information such as battery status, sensor readings, and operating mode. It helps operators monitor the robot during use.
 
-### Acrylic Robot Arm Kit
-The acrylic arm kit provides a lightweight, durable structure for the robot arm. It supports the mounted sensors, nozzle, and servos while keeping the overall system compact.
+### Aluminium Robotic Arm Kit
+The aluminium robotic arm kit provides a lightweight, durable structure for the robot arm. It supports the mounted sensors, nozzle, and servos while keeping the overall system compact.
 
 ## Development Notes
 The system is built on a lightweight mobile chassis with a three-joint robotic arm. It uses sensors to detect both the artifact and dust before activating suction. A filter chamber and load sensor are included to collect and monitor dust.
@@ -165,7 +165,7 @@ L298N Motor Driver	Motor power control	Converts control signals from the ESP32 i
 MG996R Servo Motor	Arm joint actuation	Provides torque for the shoulder, elbow, and wrist joints of the robotic arm	৳650 – ৳750	MG996R
 12V DC Gear Motor	Mobile drive	Drives the wheels of the mobile chassis with speed and torque suited for the robot base	৳350 – ৳550	DC Gear Motor
 OLED Display (0.96" I2C)	Status display	Shows system status, sensor readings, and operational messages	৳320 – ৳400	OLED Display
-Acrylic Robot Arm Kit	Structural frame	Provides the physical arm structure and mounting points for sensors and servos	৳1,200 – ৳1,600	Acrylic Arm
+Aluminium Robotic Arm Kit	Structural frame	Provides the physical arm structure and mounting points for sensors and servos	৳1,200 – ৳1,600	Acrylic Arm
 Component Descriptions
 ESP32 Microcontroller
 The ESP32 is the main controller of the AURA system. It executes the control logic, reads data from the sensors, and sends drive signals to the motors and servos.
@@ -191,8 +191,8 @@ The gear motors drive the robot’s wheels and provide traction for mobility. Th
 OLED Display
 The OLED screen shows real-time information such as battery status, sensor readings, and operating mode. It helps operators monitor the robot during use.
 
-Acrylic Robot Arm Kit
-The acrylic arm kit provides a lightweight, durable structure for the robot arm. It supports the mounted sensors, nozzle, and servos while keeping the overall system compact.
+Aluminium Robotic Arm Kit
+The aluminium robotic arm kit provides a lightweight, durable structure for the robot arm. It supports the mounted sensors, nozzle, and servos while keeping the overall system compact.
 
 Development Notes
 The system is built on a lightweight mobile chassis with a three-joint robotic arm. It uses sensors to detect both the artifact and dust before activating suction. A filter chamber and load sensor are included to collect and monitor dust.
