@@ -162,16 +162,16 @@ We also considered ultrasonic cleaning because it would avoid physical contact, 
 ## Conclusion
 AURA aims to support the preservation of cultural heritage through safe, automated, and efficient artifact cleaning.
 
-Component	Function	How it Works	Price Range	Image
-ESP32 microcontroller	Main control unit	Runs the robot firmware, reads sensors, and controls motors and actuators	৳450 – ৳550	ESP32
-VL53L0X Time-of-Flight Sensor	Distance sensing	Measures distance to the artifact using infrared light and returns precise range data	৳550 – ৳650	VL53L0X
-GP2Y1014AU0F Dust Sensor	Dust detection	Detects airborne dust particles using infrared light scattering and triggers cleaning when dust is present	৳700 – ৳850	Dust Sensor
-5015 Blower Fan	Suction source	Creates airflow through the nozzle and filter path to remove dust from the artifact area	৳180 – ৳220	Blower Fan
-L298N Motor Driver	Motor power control	Converts control signals from the ESP32 into higher-current motor drive outputs	৳180 – ৳220	L298N
-MG996R Servo Motor	Arm joint actuation	Provides torque for the shoulder, elbow, and wrist joints of the robotic arm	৳650 – ৳750	MG996R
-12V DC Gear Motor	Mobile drive	Drives the wheels of the mobile chassis with speed and torque suited for the robot base	৳350 – ৳550	DC Gear Motor
-OLED Display (0.96" I2C)	Status display	Shows system status, sensor readings, and operational messages	৳320 – ৳400	OLED Display
-Aluminium Robotic Arm Kit	Structural frame	Provides the physical arm structure and mounting points for sensors and servos	৳1,200 – ৳1,600	Acrylic Arm
+Component	Function	How it Works	Image
+ESP32 microcontroller	Main control unit	Runs the robot firmware, reads sensors, and controls motors and actuators	ESP32
+VL53L0X Time-of-Flight Sensor	Distance sensing	Measures distance to the artifact using infrared light and returns precise range data	VL53L0X
+GP2Y1014AU0F Dust Sensor	Dust detection	Detects airborne dust particles using infrared light scattering and triggers cleaning when dust is present	Dust Sensor
+5015 Blower Fan	Suction source	Creates airflow through the nozzle and filter path to remove dust from the artifact area	Blower Fan
+L298N Motor Driver	Motor power control	Converts control signals from the ESP32 into higher-current motor drive outputs	L298N
+MG996R Servo Motor	Arm joint actuation	Provides torque for the shoulder, elbow, and wrist joints of the robotic arm	MG996R
+12V DC Gear Motor	Mobile drive	Drives the wheels of the mobile chassis with speed and torque suited for the robot base	DC Gear Motor
+OLED Display (0.96" I2C)	Status display	Shows system status, sensor readings, and operational messages	OLED Display
+Aluminium Robotic Arm Kit	Structural frame	Provides the physical arm structure and mounting points for sensors and servos	Acrylic Arm
 Component Descriptions
 ESP32 Microcontroller
 The ESP32 is the main controller of the AURA system. It executes the control logic, reads data from the sensors, and sends drive signals to the motors and servos.
