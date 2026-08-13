@@ -49,15 +49,21 @@ AURA provides a non-contact cleaning solution that detects dust and maintains a 
 - **How it works:** Trained conservators use soft brushes, low-suction hand-held micro-vacuums, and HEPA-filtered extraction units.
 - **Limitations:** This approach is labor-intensive, slow, expensive, and relies on human skill. It also carries risk of accidental physical contact with fragile surfaces.
 
+![Traditional Manual Conservation](images/Traditional%20Manual%20Conservation.jpg)
+
 #### 2. Commercial Autonomous Floor Cleaners
 - **Examples:** *Pudu Robotics CC1/MT1*, *Gausium Vacuum 40*, *SoftBank Robotics Whiz*.
 - **How it works:** LiDAR- and vision-guided robots roam galleries to sweep, vacuum, and scrub floors.
 - **Limitations:** These systems only clean floor areas and cannot reach elevated display cases, fragile artifacts, or complex 3D surfaces.
 
+![Commercial Autonomous Floor Cleaner](images/Commercial%20Autonomous%20Floor%20Cleaners.jpg)
+
 #### 3. Industrial Articulated Cleaning Arms
 - **Examples:** Custom 6-DOF robotic arms from KUKA or Universal Robots adapted with soft brushes or suction heads.
 - **How it works:** Fixed robots move along predefined paths to clean specialized surfaces in industrial or display environments.
 - **Limitations:** These systems are costly, bulky, and typically lack autonomous mobility and delicate non-contact sensing for fragile objects.
+
+![Industrial Articulated Cleaning Arm](images/Industrial%20Articulated%20Cleaning%20Arms.jpg)
 
 ### Why Our Solution Is Superior
 - **Artifact Safety First:** The VL53L0X ToF sensor keeps the nozzle at a safe, non-contact distance from the artifact, avoiding contact and mechanical damage.
