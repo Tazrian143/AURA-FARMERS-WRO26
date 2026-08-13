@@ -97,7 +97,7 @@ AURA uses the ESP32 to monitor the distance sensors and dust sensor. When dust i
 | Component | Function | How it Works | Price Range | Image |
 |---|---|---|---|---|
 | ESP32 microcontroller | Main control unit | Runs the robot firmware, reads sensors, and controls motors and actuators | ৳450 – ৳550 | ![ESP32](images/microcontroller.jpg) |
-| VL53L0X Time-of-Flight Sensor | Distance sensing | Measures distance to the artifact using infrared light and returns precise range data | ৳550 – ৳650 | ![VL53L0X](images/tof-sensor.svg) |
+| VL53L0X Time-of-Flight Sensor | Distance sensing | Measures distance to the artifact using infrared light and returns precise range data | ৳550 – ৳650 | ![VL53L0X](images/Time%20of%20flight.jpg) |
 | GP2Y1014AU0F Dust Sensor | Dust detection | Detects airborne dust particles using infrared light scattering and triggers cleaning when dust is present | ৳700 – ৳850 | ![Dust Sensor](images/dust-sensor.jpg) |
 | 5015 Blower Fan | Suction source | Creates airflow through the nozzle and filter path to remove dust from the artifact area | ৳180 – ৳220 | ![Blower Fan](images/fan.jpg) |
 | 1-Channel 5V Relay Module | Switching and control | Uses a low-voltage signal from the ESP32 to switch the blower or other high-power device on and off safely | ৳150 – ৳220 | ![1-Channel 5V Relay Module](images/Relay%20Module.jpg) |
