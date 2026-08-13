@@ -41,6 +41,10 @@ AURA is an intelligent robotic cleaning system designed to protect delicate hist
 
 **MD NABHAN NUBAID (2ND MEMBER):** 2nd member and coordinator of hardware and physical components. Compiled the main frame and other hardware-related components. He studies at St. Joseph Higher Secondary School in the 8th grade. He hails from Lalmonirhat, Rangpur but currently resides in Dhaka. He is fond of tomatoes.
 
+<div align="center">
+  <img src="https://github.com/Tazrian143/AURA-FARMERS-WRO26/blob/main/images/2nd%20member.jpg?raw=true" alt="MD Nabhan Nubaid" width="250">
+</div>
+
 **KAZI TASFIA ALAM (3RD MEMBER):** 3rd member, responsible for handling the project documentation and written reports. She is a Grade 7 student at Maple Leaf International School.
 
 ## Problem Statement
