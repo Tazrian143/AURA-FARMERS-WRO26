@@ -80,8 +80,9 @@ AURA was built by combining a compact mobile base, a lightweight robotic arm, an
 3. Secure the ESP32 controller on the chassis and wire the VL5303X distance sensors and GP2Y1014AU0F dust sensor.
 4. Install the 5015 blower fan and connect it to the nozzle and filter path for suction.
 5. Connect the wheel motors and servos to the L298N motor drivers, then wire the drivers to the ESP32.
-6. Attach the OLED display and configure it to show live system status and sensor readings.
-7. Verify the power wiring, then test the sensor readings, arm movement, and vacuum operation.
+6. Install the LM2596 DC-DC buck converter for the control electronics and the XL4016 PWM buck converter for the higher-power branch, ensuring both power rails are regulated safely.
+7. Attach the OLED display and configure it to show live system status and sensor readings.
+8. Verify the power wiring, then test the sensor readings, arm movement, and vacuum operation.
 
 ### How It Works
 AURA uses the ESP32 to monitor the distance sensors and dust sensor. When dust is detected, the controller activates the blower and moves the arm to clean the surface while keeping the nozzle at a safe distance. The mobile base allows the system to position itself near artifacts, and the OLED displays the current status.
@@ -96,9 +97,11 @@ AURA uses the ESP32 to monitor the distance sensors and dust sensor. When dust i
 | Component | Function | How it Works | Price Range | Image |
 |---|---|---|---|---|
 | ESP32 microcontroller | Main control unit | Runs the robot firmware, reads sensors, and controls motors and actuators | ৳450 – ৳550 | ![ESP32](images/microcontroller.jpg) |
-|  VL53L0X Time-of-Flight sensor | Distance sensing | Measures distance to the artifact using infrared light and returns precise range data | ৳550 – ৳650 | ![VL5303X](images/arm.jpg) |
+| VL5303X Time-of-Flight Sensor | Distance sensing | Measures distance to the artifact using infrared light and returns precise range data | ৳550 – ৳650 | ![VL5303X](images/tof-sensor.svg) |
 | GP2Y1014AU0F Dust Sensor | Dust detection | Detects airborne dust particles using infrared light scattering and triggers cleaning when dust is present | ৳700 – ৳850 | ![Dust Sensor](images/dust-sensor.jpg) |
 | 5015 Blower Fan | Suction source | Creates airflow through the nozzle and filter path to remove dust from the artifact area | ৳180 – ৳220 | ![Blower Fan](images/fan.jpg) |
+| LM2596 DC-DC Buck Converter | Power regulation | Steps down the battery voltage to a stable 5V or 3.3V supply for the ESP32, sensors, and low-power electronics | ৳75 | ![LM2596 Buck Converter](images/buck%20convertor%201.jpg) |
+| XL4016 PWM Buck Converter | Power regulation | Provides adjustable high-current DC-DC step-down output for the motor power branch or other heavy-load electronics | ৳420 | ![XL4016 Buck Converter](images/buck%20convertor%202.jpg) |
 | L298N Motor Driver | Motor power control | Converts control signals from the ESP32 into higher-current motor drive outputs | ৳180 – ৳220 | ![L298N](images/motor-driver.jpg) |
 | MG996R Servo Motor | Arm joint actuation | Provides torque for the shoulder, elbow, and wrist joints of the robotic arm | ৳650 – ৳750 | ![MG996R](images/servo-motor.jpg) |
 | 12V DC Gear Motor | Mobile drive | Drives the wheels of the mobile chassis with speed and torque suited for the robot base | ৳350 – ৳550 | ![DC Gear Motor](images/car.jpg) |
@@ -119,6 +122,12 @@ This optical dust sensor detects fine particles in the air near the artifact. Wh
 ### 5015 Blower Fan
 The blower fan provides the suction force needed to pull dust particles through the nozzle and into the filter chamber. It is sized to deliver enough airflow while remaining compact and quiet.
 
+### LM2596 DC-DC Buck Converter
+One LM2596 DC-DC buck converter is used to lower the battery voltage to the stable 5V or 3.3V levels required by the ESP32, sensors, and peripheral electronics. It helps protect the control system from overvoltage and keeps the power delivery stable during operation.
+
+### XL4016 PWM Buck Converter
+The second module is an XL4016 PWM buck converter, which is a higher-power adjustable DC-DC step-down regulator. It is used for a heavier current branch in the robot, allowing the system to power the main motor or another high-demand load while keeping the voltage within a safe operating range. This board is priced at around ৳420.
+
 ### L298N Motor Driver
 The L298N driver modules allow the ESP32 to control DC motors and servos. They handle the current required by the motors, enabling safe and responsive movement of the robot and arm.
 
@@ -137,31 +146,12 @@ The acrylic arm kit provides a lightweight, durable structure for the robot arm.
 ## Development Notes
 The system is built on a lightweight mobile chassis with a three-joint robotic arm. It uses sensors to detect both the artifact and dust before activating suction. A filter chamber and load sensor are included to collect and monitor dust.
 
+## Alternative Approach Considered
+We also considered ultrasonic cleaning because it would avoid physical contact, require less moving machinery, and could cover complex shapes. However, ultrasonic airflow only scatters dust rather than collecting it, so it does not actually clean the surface.
+
 ## Conclusion
 AURA aims to support the preservation of cultural heritage through safe, automated, and efficient artifact cleaning.
 
-We also considered ultrasonic cleaning because it would avoid physical contact, require less moving machinery, and could cover complex shapes. However, ultrasonic airflow only scatters dust rather than collecting it, so it does not actually clean the surface.
-
-Project Build Process
-AURA was built by combining a compact mobile base, a lightweight robotic arm, and a smart sensing system. The chassis, motors, sensors, and control board were arranged to deliver precise, low-impact cleaning for fragile museum objects.
-
-Assembly Steps
-Build the acrylic chassis and mount the 12V DC gear motors for the wheels.
-Assemble the aluminium robotic arm and attach the MG996R servos at each joint.
-Secure the ESP32 controller on the chassis and wire the VL5303X distance sensors and GP2Y1014AU0F dust sensor.
-Install the 5015 blower fan and connect it to the nozzle and filter path for suction.
-Connect the wheel motors and servos to the L298N motor drivers, then wire the drivers to the ESP32.
-Attach the OLED display and configure it to show live system status and sensor readings.
-Verify the power wiring, then test the sensor readings, arm movement, and vacuum operation.
-How It Works
-AURA uses the ESP32 to monitor the distance sensors and dust sensor. When dust is detected, the controller activates the blower and moves the arm to clean the surface while keeping the nozzle at a safe distance. The mobile base allows the system to position itself near artifacts, and the OLED displays the current status.
-
-Project Flow
-Build → Connect → Test
-Chassis, motors, and arm assembled first
-Sensors and controllers wired next
-System tested for motion, dust detection, and suction
-Key Components
 Component	Function	How it Works	Price Range	Image
 ESP32 microcontroller	Main control unit	Runs the robot firmware, reads sensors, and controls motors and actuators	৳450 – ৳550	ESP32
 VL5303X Time-of-Flight Sensor	Distance sensing	Measures distance to the artifact using infrared light and returns precise range data	৳550 – ৳650	VL5303X
@@ -205,6 +195,14 @@ The system is built on a lightweight mobile chassis with a three-joint robotic a
 
 Conclusion
 AURA aims to support the preservation of cultural heritage through safe, automated, and efficient artifact cleaning.
+
+## Tests Conducted
+- Sentience validation: confirmed the system’s ability to respond and behave consistently during operation.
+- Functional performance assessment: verified motion control, sensor readings, and cleaning mechanics.
+
+## Challenges Encountered
+- Frame spacing and alignment required careful adjustment to ensure structural stability.
+- Component placement and wiring were refined to support reliable operation and easier maintenance.
 
 ## Sources
 - Research and inspiration from Gemini and Google.
