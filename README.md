@@ -83,7 +83,7 @@ AURA was built by combining a compact mobile base, a lightweight robotic arm, an
 ### Assembly Steps
 1. Build the acrylic chassis and mount the 12V DC gear motors for the wheels.
 2. Assemble the aluminium robotic arm and attach the MG996R servos at each joint.
-3. Secure the ESP32 controller on the chassis and wire the VL53L0X distance sensor and GP2Y1014AU0F dust sensor.
+3. Secure the ESP32 Development Board on the chassis and wire the VL53L0X distance sensor and GP2Y1014AU0F dust sensor.
 4. Install the 5015 blower fan and connect it to the nozzle and filter path for suction.
 5. Connect the wheel motors and servos to the L298N motor drivers, then wire the drivers to the ESP32.
 6. Install the LM2596 DC-DC buck converter for the control electronics and the XL4016 PWM buck converter for the higher-power branch, ensuring both power rails are regulated safely.
@@ -102,7 +102,7 @@ AURA uses the ESP32 to monitor the distance sensors and dust sensor. When dust i
 ## Key Components
 | Component | Function | How it Works | Price Range | Image |
 |---|---|---|---|---|
-| ESP32 microcontroller | Main control unit | Runs the robot firmware, reads sensors, and controls motors and actuators | ৳450 – ৳550 | ![ESP32](images/microcontroller.jpg) |
+| ESP32 Development Board | Main control unit | Runs the robot firmware, reads sensors, and controls motors and actuators; provides Wi-Fi/Bluetooth and GPIO access for the robot system | ৳450 – ৳550 | ![ESP32 Development Board](images/microcontroller.jpg) |
 | VL53L0X Time-of-Flight Sensor | Distance sensing | Measures distance to the artifact using infrared light and returns precise range data | ৳550 – ৳650 | ![VL53L0X](images/time%20of%20flight.jpg) |
 | GP2Y1014AU0F Dust Sensor | Dust detection | Detects airborne dust particles using infrared light scattering and triggers cleaning when dust is present | ৳700 – ৳850 | ![Dust Sensor](images/dust-sensor.jpg) |
 | 5015 Blower Fan | Suction source | Creates airflow through the nozzle and filter path to remove dust from the artifact area | ৳180 – ৳220 | ![Blower Fan](images/fan.jpg) |
@@ -117,8 +117,8 @@ AURA uses the ESP32 to monitor the distance sensors and dust sensor. When dust i
 
 ## Component Descriptions
 
-### ESP32 Microcontroller
-The ESP32 is the main controller of the AURA system. It executes the control logic, reads data from the sensors, and sends drive signals to the motors and servos.
+### ESP32 Development Board
+The ESP32 Development Board is the main controller of the AURA system. It executes the control logic, reads sensor data, and sends drive signals to the motors, servos, and relay modules. This board is used because it offers built-in Wi-Fi and Bluetooth, multiple GPIO pins, and a compact form factor suitable for a mobile robot system.
 
 ### VL53L0X Time-of-Flight Sensor
 This sensor measures the distance to the artifact without contacting it. It uses a light pulse and timing measurement to determine the exact range, enabling the arm to maintain a safe cleaning distance.
@@ -163,7 +163,7 @@ We also considered ultrasonic cleaning because it would avoid physical contact, 
 AURA aims to support the preservation of cultural heritage through safe, automated, and efficient artifact cleaning.
 
 Component	Function	How it Works	Image
-ESP32 microcontroller	Main control unit	Runs the robot firmware, reads sensors, and controls motors and actuators	ESP32
+ESP32 Development Board	Main control unit	Runs the robot firmware, reads sensors, and controls motors and actuators; provides Wi-Fi/Bluetooth and GPIO access for the robot system	ESP32 Development Board
 VL53L0X Time-of-Flight Sensor	Distance sensing	Measures distance to the artifact using infrared light and returns precise range data	VL53L0X
 GP2Y1014AU0F Dust Sensor	Dust detection	Detects airborne dust particles using infrared light scattering and triggers cleaning when dust is present	Dust Sensor
 5015 Blower Fan	Suction source	Creates airflow through the nozzle and filter path to remove dust from the artifact area	Blower Fan
@@ -173,8 +173,8 @@ MG996R Servo Motor	Arm joint actuation	Provides torque for the shoulder, elbow, 
 OLED Display (0.96" I2C)	Status display	Shows system status, sensor readings, and operational messages	OLED Display
 Aluminium Robotic Arm Kit	Structural frame	Provides the physical arm structure and mounting points for sensors and servos	Acrylic Arm
 Component Descriptions
-ESP32 Microcontroller
-The ESP32 is the main controller of the AURA system. It executes the control logic, reads data from the sensors, and sends drive signals to the motors and servos.
+ESP32 Development Board
+The ESP32 Development Board is the main controller of the AURA system. It executes the control logic, reads sensor data, and sends drive signals to the motors, servos, and relay modules. This board is used because it offers built-in Wi-Fi and Bluetooth, multiple GPIO pins, and a compact form factor suitable for a mobile robot system.
 
 VL53L0X Time-of-Flight Sensor
 This sensor measures the distance to the artifact without contacting it. It uses a light pulse and timing measurement to determine the exact range, enabling the arm to maintain a safe cleaning distance.
