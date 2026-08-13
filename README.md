@@ -100,7 +100,7 @@ AURA uses the ESP32 to monitor the distance sensors and dust sensor. When dust i
 | VL5303X Time-of-Flight Sensor | Distance sensing | Measures distance to the artifact using infrared light and returns precise range data | ৳550 – ৳650 | ![VL5303X](images/tof-sensor.svg) |
 | GP2Y1014AU0F Dust Sensor | Dust detection | Detects airborne dust particles using infrared light scattering and triggers cleaning when dust is present | ৳700 – ৳850 | ![Dust Sensor](images/dust-sensor.jpg) |
 | 5015 Blower Fan | Suction source | Creates airflow through the nozzle and filter path to remove dust from the artifact area | ৳180 – ৳220 | ![Blower Fan](images/fan.jpg) |
-| 1-Channel 5V Relay Module | Switching and control | Uses a low-voltage signal from the ESP32 to switch the blower or other high-power device on and off safely | ৳150 – ৳220 | — |
+| 1-Channel 5V Relay Module | Switching and control | Uses a low-voltage signal from the ESP32 to switch the blower or other high-power device on and off safely | ৳150 – ৳220 | ![1-Channel 5V Relay Module](images/Relay%20Module.jpg) |
 | LM2596 DC-DC Buck Converter | Power regulation | Steps down the battery voltage to a stable 5V or 3.3V supply for the ESP32, sensors, and low-power electronics | ৳75 | ![LM2596 Buck Converter](images/buck%20convertor%201.jpg) |
 | XL4016 PWM Buck Converter | Power regulation | Provides adjustable high-current DC-DC step-down output for the motor power branch or other heavy-load electronics | ৳420 | ![XL4016 Buck Converter](images/buck%20convertor%202.jpg) |
 | L298N Motor Driver | Motor power control | Converts control signals from the ESP32 into higher-current motor drive outputs | ৳180 – ৳220 | ![L298N](images/motor-driver.jpg) |
