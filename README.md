@@ -114,8 +114,8 @@ AURA uses the ESP32 to monitor the distance sensors and dust sensor. When dust i
 ### ESP32 Microcontroller
 The ESP32 is the main controller of the AURA system. It executes the control logic, reads data from the sensors, and sends drive signals to the motors and servos.
 
-### VL5303X Time-of-Flight Sensors
-These sensors measure the distance to the artifact without contacting it. They use a light pulse and timing measurement to determine the exact range, enabling the arm to maintain a safe cleaning distance.
+### VL5303X Time-of-Flight Sensor
+This sensor measures the distance to the artifact without contacting it. It uses a light pulse and timing measurement to determine the exact range, enabling the arm to maintain a safe cleaning distance.
 
 ### GP2Y1014AU0F Dust Sensor
 This optical dust sensor detects fine particles in the air near the artifact. When the sensor detects dust above a threshold, it signals the ESP32 to activate the vacuum system.
