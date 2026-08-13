@@ -1,5 +1,5 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="320" height="220" viewBox="0 0 320 220" role="img" aria-labelledby="title desc">
-  <title id="title">VL5303X Time-of-Flight Sensor</title>
+  <title id="title">VL53L0X Time-of-Flight Sensor</title>
   <desc id="desc">A stylized breakout board with an infrared ranging sensor lens and labeled pins.</desc>
   <rect width="320" height="220" rx="18" fill="#f4f7fb"/>
   <rect x="48" y="38" width="224" height="144" rx="18" fill="#dfe7f2" stroke="#44566c" stroke-width="3"/>
@@ -9,7 +9,7 @@
   <path d="M120 86c14-16 66-16 80 0" fill="none" stroke="#e2f4ff" stroke-width="4" stroke-linecap="round" opacity="0.9"/>
   <path d="M116 134c18 16 70 16 88 0" fill="none" stroke="#e2f4ff" stroke-width="4" stroke-linecap="round" opacity="0.9"/>
   <g fill="#3f536a" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="700">
-    <text x="112" y="182">VL5303X</text>
+    <text x="108" y="182">VL53L0X</text>
     <text x="148" y="196">ToF</text>
   </g>
   <g stroke="#3f536a" stroke-width="3" stroke-linecap="round">

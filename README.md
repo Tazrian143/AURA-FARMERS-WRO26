@@ -60,7 +60,7 @@ AURA provides a non-contact cleaning solution that detects dust and maintains a 
 - **Limitations:** These systems are costly, bulky, and typically lack autonomous mobility and delicate non-contact sensing for fragile objects.
 
 ### Why Our Solution Is Superior
-- **Artifact Safety First:** The VL5303X ToF sensor keeps the nozzle at a safe, non-contact distance from the artifact, avoiding contact and mechanical damage.
+- **Artifact Safety First:** The VL53L0X ToF sensor keeps the nozzle at a safe, non-contact distance from the artifact, avoiding contact and mechanical damage.
 - **Targeted, Energy-Efficient Operation:** The GP2Y1014AU0F dust sensor activates suction only when dust is detected, reducing unnecessary operation and airflow around fragile items.
 - **Precision Cleaning Motion:** The robotic arm reaches the artifact directly and cleans only the dusty areas, minimizing wear and protecting sensitive surfaces.
 
@@ -77,7 +77,7 @@ AURA was built by combining a compact mobile base, a lightweight robotic arm, an
 ### Assembly Steps
 1. Build the acrylic chassis and mount the 12V DC gear motors for the wheels.
 2. Assemble the aluminium robotic arm and attach the MG996R servos at each joint.
-3. Secure the ESP32 controller on the chassis and wire the VL5303X distance sensors and GP2Y1014AU0F dust sensor.
+3. Secure the ESP32 controller on the chassis and wire the VL53L0X distance sensor and GP2Y1014AU0F dust sensor.
 4. Install the 5015 blower fan and connect it to the nozzle and filter path for suction.
 5. Connect the wheel motors and servos to the L298N motor drivers, then wire the drivers to the ESP32.
 6. Install the LM2596 DC-DC buck converter for the control electronics and the XL4016 PWM buck converter for the higher-power branch, ensuring both power rails are regulated safely.
@@ -97,7 +97,7 @@ AURA uses the ESP32 to monitor the distance sensors and dust sensor. When dust i
 | Component | Function | How it Works | Price Range | Image |
 |---|---|---|---|---|
 | ESP32 microcontroller | Main control unit | Runs the robot firmware, reads sensors, and controls motors and actuators | ৳450 – ৳550 | ![ESP32](images/microcontroller.jpg) |
-| VL5303X Time-of-Flight Sensor | Distance sensing | Measures distance to the artifact using infrared light and returns precise range data | ৳550 – ৳650 | ![VL5303X](images/tof-sensor.svg) |
+| VL53L0X Time-of-Flight Sensor | Distance sensing | Measures distance to the artifact using infrared light and returns precise range data | ৳550 – ৳650 | ![VL53L0X](images/tof-sensor.svg) |
 | GP2Y1014AU0F Dust Sensor | Dust detection | Detects airborne dust particles using infrared light scattering and triggers cleaning when dust is present | ৳700 – ৳850 | ![Dust Sensor](images/dust-sensor.jpg) |
 | 5015 Blower Fan | Suction source | Creates airflow through the nozzle and filter path to remove dust from the artifact area | ৳180 – ৳220 | ![Blower Fan](images/fan.jpg) |
 | 1-Channel 5V Relay Module | Switching and control | Uses a low-voltage signal from the ESP32 to switch the blower or other high-power device on and off safely | ৳150 – ৳220 | ![1-Channel 5V Relay Module](images/Relay%20Module.jpg) |
@@ -114,7 +114,7 @@ AURA uses the ESP32 to monitor the distance sensors and dust sensor. When dust i
 ### ESP32 Microcontroller
 The ESP32 is the main controller of the AURA system. It executes the control logic, reads data from the sensors, and sends drive signals to the motors and servos.
 
-### VL5303X Time-of-Flight Sensor
+### VL53L0X Time-of-Flight Sensor
 This sensor measures the distance to the artifact without contacting it. It uses a light pulse and timing measurement to determine the exact range, enabling the arm to maintain a safe cleaning distance.
 
 ### GP2Y1014AU0F Dust Sensor
@@ -158,7 +158,7 @@ AURA aims to support the preservation of cultural heritage through safe, automat
 
 Component	Function	How it Works	Price Range	Image
 ESP32 microcontroller	Main control unit	Runs the robot firmware, reads sensors, and controls motors and actuators	৳450 – ৳550	ESP32
-VL5303X Time-of-Flight Sensor	Distance sensing	Measures distance to the artifact using infrared light and returns precise range data	৳550 – ৳650	VL5303X
+VL53L0X Time-of-Flight Sensor	Distance sensing	Measures distance to the artifact using infrared light and returns precise range data	৳550 – ৳650	VL53L0X
 GP2Y1014AU0F Dust Sensor	Dust detection	Detects airborne dust particles using infrared light scattering and triggers cleaning when dust is present	৳700 – ৳850	Dust Sensor
 5015 Blower Fan	Suction source	Creates airflow through the nozzle and filter path to remove dust from the artifact area	৳180 – ৳220	Blower Fan
 L298N Motor Driver	Motor power control	Converts control signals from the ESP32 into higher-current motor drive outputs	৳180 – ৳220	L298N
@@ -170,8 +170,8 @@ Component Descriptions
 ESP32 Microcontroller
 The ESP32 is the main controller of the AURA system. It executes the control logic, reads data from the sensors, and sends drive signals to the motors and servos.
 
-VL5303X Time-of-Flight Sensors
-These sensors measure the distance to the artifact without contacting it. They use a light pulse and timing measurement to determine the exact range, enabling the arm to maintain a safe cleaning distance.
+VL53L0X Time-of-Flight Sensor
+This sensor measures the distance to the artifact without contacting it. It uses a light pulse and timing measurement to determine the exact range, enabling the arm to maintain a safe cleaning distance.
 
 GP2Y1014AU0F Dust Sensor
 This optical dust sensor detects fine particles in the air near the artifact. When the sensor detects dust above a threshold, it signals the ESP32 to activate the vacuum system.
