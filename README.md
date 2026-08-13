@@ -3,7 +3,7 @@
 ## **Dust Free History**
 
 <div align="center">
-  ![AURA Logo](https://github.com/Tazrian143/AURA-FARMERS-WRO26/blob/main/images/logo.jpg?raw=true)
+  <img src="https://github.com/Tazrian143/AURA-FARMERS-WRO26/blob/main/images/logo.jpg?raw=true" alt="AURA Logo" width="300">
 </div>
 
 ## Table of Contents
