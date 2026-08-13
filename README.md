@@ -2,7 +2,7 @@
 
 ## **Dust Free History**
 
-![AURA Logo](images/logo.png)
+![AURA Logo](images/logo.jpg)
 
 ## Table of Contents
 - [Dust Free History](#dust-free-history)
