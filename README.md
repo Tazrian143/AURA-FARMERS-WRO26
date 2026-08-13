@@ -158,6 +158,7 @@ ESP32 microcontroller	Main control unit	Runs the robot firmware, reads sensors, 
 VL5303X Time-of-Flight Sensor	Distance sensing	Measures distance to the artifact using infrared light and returns precise range data	৳550 – ৳650	VL5303X
 GP2Y1014AU0F Dust Sensor	Dust detection	Detects airborne dust particles using infrared light scattering and triggers cleaning when dust is present	৳700 – ৳850	Dust Sensor
 5015 Blower Fan	Suction source	Creates airflow through the nozzle and filter path to remove dust from the artifact area	৳180 – ৳220	Blower Fan
+Vacuum Motor Unit	Dust collection	Houses the motor and fan assembly that pulls dust particles into the filter chamber through the suction nozzle	৳300 – ৳400	Vacuum
 L298N Motor Driver	Motor power control	Converts control signals from the ESP32 into higher-current motor drive outputs	৳180 – ৳220	L298N
 MG996R Servo Motor	Arm joint actuation	Provides torque for the shoulder, elbow, and wrist joints of the robotic arm	৳650 – ৳750	MG996R
 12V DC Gear Motor	Mobile drive	Drives the wheels of the mobile chassis with speed and torque suited for the robot base	৳350 – ৳550	DC Gear Motor
@@ -175,6 +176,9 @@ This optical dust sensor detects fine particles in the air near the artifact. Wh
 
 5015 Blower Fan
 The blower fan provides the suction force needed to pull dust particles through the nozzle and into the filter chamber. It is sized to deliver enough airflow while remaining compact and quiet.
+
+Vacuum Motor Unit
+The vacuum motor unit houses the motor and fan assembly that creates suction to pull dust particles from the artifact surface into the filter chamber. It works in conjunction with the blower fan to ensure efficient dust collection and removal, maintaining a clean environment around the artifact during the cleaning process.
 
 L298N Motor Driver
 The L298N driver modules allow the ESP32 to control DC motors and servos. They handle the current required by the motors, enabling safe and responsive movement of the robot and arm.
