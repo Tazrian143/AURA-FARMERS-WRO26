@@ -2,7 +2,10 @@
 
 ## **Dust Free History**
 
+![AURA Logo](images/logo.png)
+
 ## Table of Contents
+- [Dust Free History](#dust-free-history)
 - [Project Overview](#project-overview)
 - [Team Information](#team-information)
 - [Team Members](#team-members)
@@ -18,6 +21,7 @@
   - [Project Flow](#project-flow)
 - [Key Components](#key-components)
 
+## Dust Free History
 
 ---
 
@@ -49,24 +53,18 @@ AURA provides a non-contact cleaning solution that detects dust and maintains a 
 - **How it works:** Trained conservators use soft brushes, low-suction hand-held micro-vacuums, and HEPA-filtered extraction units.
 - **Limitations:** This approach is labor-intensive, slow, expensive, and relies on human skill. It also carries risk of accidental physical contact with fragile surfaces.
 
-![Traditional Manual Conservation](images/Traditional%20Manual%20Conservation.jpg)
-
 #### 2. Commercial Autonomous Floor Cleaners
 - **Examples:** *Pudu Robotics CC1/MT1*, *Gausium Vacuum 40*, *SoftBank Robotics Whiz*.
 - **How it works:** LiDAR- and vision-guided robots roam galleries to sweep, vacuum, and scrub floors.
 - **Limitations:** These systems only clean floor areas and cannot reach elevated display cases, fragile artifacts, or complex 3D surfaces.
-
-![Commercial Autonomous Floor Cleaner](images/Commercial%20Autonomous%20Floor%20Cleaners.jpg)
 
 #### 3. Industrial Articulated Cleaning Arms
 - **Examples:** Custom 6-DOF robotic arms from KUKA or Universal Robots adapted with soft brushes or suction heads.
 - **How it works:** Fixed robots move along predefined paths to clean specialized surfaces in industrial or display environments.
 - **Limitations:** These systems are costly, bulky, and typically lack autonomous mobility and delicate non-contact sensing for fragile objects.
 
-![Industrial Articulated Cleaning Arm](images/Industrial%20Articulated%20Cleaning%20Arms.jpg)
-
 ### Why Our Solution Is Superior
-- **Artifact Safety First:** The VL53L0X ToF sensor keeps the nozzle at a safe, non-contact distance from the artifact, avoiding contact and mechanical damage.
+- **Artifact Safety First:** The VL5303X ToF sensor keeps the nozzle at a safe, non-contact distance from the artifact, avoiding contact and mechanical damage.
 - **Targeted, Energy-Efficient Operation:** The GP2Y1014AU0F dust sensor activates suction only when dust is detected, reducing unnecessary operation and airflow around fragile items.
 - **Precision Cleaning Motion:** The robotic arm reaches the artifact directly and cleans only the dusty areas, minimizing wear and protecting sensitive surfaces.
 
@@ -83,16 +81,14 @@ AURA was built by combining a compact mobile base, a lightweight robotic arm, an
 ### Assembly Steps
 1. Build the acrylic chassis and mount the 12V DC gear motors for the wheels.
 2. Assemble the aluminium robotic arm and attach the MG996R servos at each joint.
-3. Secure the ESP32 Development Board on the chassis and wire the VL53L0X distance sensor and GP2Y1014AU0F dust sensor.
+3. Secure the ESP32 controller on the chassis and wire the VL5303X distance sensors and GP2Y1014AU0F dust sensor.
 4. Install the 5015 blower fan and connect it to the nozzle and filter path for suction.
 5. Connect the wheel motors and servos to the L298N motor drivers, then wire the drivers to the ESP32.
-6. Install the LM2596 DC-DC buck converter for the control electronics and the XL4016 PWM buck converter for the higher-power branch, ensuring both power rails are regulated safely.
-7. Connect the 4-cell Li-Po battery pack to the power input and distribute regulated power to the ESP32, sensors, fan, and motor driver circuits.
-8. Attach the OLED display and configure it to show live system status and sensor readings.
-9. Verify the power wiring, then test the sensor readings, arm movement, and vacuum operation.
+6. Attach the OLED display and configure it to show live system status and sensor readings.
+7. Verify the power wiring, then test the sensor readings, arm movement, and vacuum operation.
 
 ### How It Works
-AURA uses the ESP32 to monitor the distance sensors and dust sensor. When dust is detected, the controller activates the blower and moves the arm to clean the surface while keeping the nozzle at a safe distance. The 4-cell Li-Po battery pack supplies the main energy to the system and the buck converters regulate stable voltage for the control and motor branches. The mobile base allows the system to position itself near artifacts, and the OLED displays the current status.
+AURA uses the ESP32 to monitor the distance sensors and dust sensor. When dust is detected, the controller activates the blower and moves the arm to clean the surface while keeping the nozzle at a safe distance. The mobile base allows the system to position itself near artifacts, and the OLED displays the current status.
 
 ### Project Flow
 - Build → Connect → Test
@@ -103,42 +99,29 @@ AURA uses the ESP32 to monitor the distance sensors and dust sensor. When dust i
 ## Key Components
 | Component | Function | How it Works | Price Range | Image |
 |---|---|---|---|---|
-| ESP32 Development Board | Main control unit | Runs the robot firmware, reads sensors, and controls motors and actuators; provides Wi-Fi/Bluetooth and GPIO access for the robot system | ৳450 – ৳550 | ![ESP32 Development Board](images/microcontroller.jpg) |
-| VL53L0X Time-of-Flight Sensor | Distance sensing | Measures distance to the artifact using infrared light and returns precise range data | ৳550 – ৳650 | ![VL53L0X](images/time%20of%20flight.jpg) |
+| ESP32 microcontroller | Main control unit | Runs the robot firmware, reads sensors, and controls motors and actuators | ৳450 – ৳550 | ![ESP32](images/microcontroller.jpg) |
+| VL5303X Time-of-Flight Sensor | Distance sensing | Measures distance to the artifact using infrared light and returns precise range data | ৳550 – ৳650 | ![VL5303X](images/arm.jpg) |
 | GP2Y1014AU0F Dust Sensor | Dust detection | Detects airborne dust particles using infrared light scattering and triggers cleaning when dust is present | ৳700 – ৳850 | ![Dust Sensor](images/dust-sensor.jpg) |
 | 5015 Blower Fan | Suction source | Creates airflow through the nozzle and filter path to remove dust from the artifact area | ৳180 – ৳220 | ![Blower Fan](images/fan.jpg) |
-| 1-Channel 5V Relay Module | Switching and control | Uses a low-voltage signal from the ESP32 to switch the blower or other high-power device on and off safely | ৳150 – ৳220 | ![1-Channel 5V Relay Module](images/Relay%20Module.jpg) |
-| LM2596 DC-DC Buck Converter | Power regulation | Steps down the battery voltage to a stable 5V or 3.3V supply for the ESP32, sensors, and low-power electronics | ৳75 | ![LM2596 Buck Converter](images/buck%20convertor%201.jpg) |
-| XL4016 PWM Buck Converter | Power regulation | Provides adjustable high-current DC-DC step-down output for the motor power branch or other heavy-load electronics | ৳420 | ![XL4016 Buck Converter](images/buck%20convertor%202.jpg) |
 | L298N Motor Driver | Motor power control | Converts control signals from the ESP32 into higher-current motor drive outputs | ৳180 – ৳220 | ![L298N](images/motor-driver.jpg) |
 | MG996R Servo Motor | Arm joint actuation | Provides torque for the shoulder, elbow, and wrist joints of the robotic arm | ৳650 – ৳750 | ![MG996R](images/servo-motor.jpg) |
 | 12V DC Gear Motor | Mobile drive | Drives the wheels of the mobile chassis with speed and torque suited for the robot base | ৳350 – ৳550 | ![DC Gear Motor](images/car.jpg) |
-| Li-Po Battery 4 Cell | Power source | Supplies the main energy for the robot, feeding the control electronics, fan, motors, and sensor system through the buck converters | ৳1,000 – ৳1,500 | ![Li-Po Battery 4 Cell](images/li-po%20battery%204%20cell.jpg) |
 | OLED Display (0.96" I2C) | Status display | Shows system status, sensor readings, and operational messages | ৳320 – ৳400 | ![OLED Display](images/display.jpg) |
-| Aluminium Robotic Arm Kit | Structural frame | Provides the physical arm structure and mounting points for sensors and servos | ৳1,200 – ৳1,600 | ![Acrylic Arm](images/arm.jpg) |
+| Acrylic Robot Arm Kit | Structural frame | Provides the physical arm structure and mounting points for sensors and servos | ৳1,200 – ৳1,600 | ![Acrylic Arm](images/arm.jpg) |
 
 ## Component Descriptions
 
-### ESP32 Development Board
-The ESP32 Development Board is the main controller of the AURA system. It executes the control logic, reads sensor data, and sends drive signals to the motors, servos, and relay modules. This board is used because it offers built-in Wi-Fi and Bluetooth, multiple GPIO pins, and a compact form factor suitable for a mobile robot system.
+### ESP32 Microcontroller
+The ESP32 is the main controller of the AURA system. It executes the control logic, reads data from the sensors, and sends drive signals to the motors and servos.
 
-### VL53L0X Time-of-Flight Sensor
-This sensor measures the distance to the artifact without contacting it. It uses a light pulse and timing measurement to determine the exact range, enabling the arm to maintain a safe cleaning distance.
+### VL5303X Time-of-Flight Sensors
+These sensors measure the distance to the artifact without contacting it. They use a light pulse and timing measurement to determine the exact range, enabling the arm to maintain a safe cleaning distance.
 
 ### GP2Y1014AU0F Dust Sensor
 This optical dust sensor detects fine particles in the air near the artifact. When the sensor detects dust above a threshold, it signals the ESP32 to activate the vacuum system.
 
 ### 5015 Blower Fan
 The blower fan provides the suction force needed to pull dust particles through the nozzle and into the filter chamber. It is sized to deliver enough airflow while remaining compact and quiet.
-
-### 1-Channel 5V Relay Module
-The 1-channel 5V relay module acts as an electronic switch for the AURA system. It allows the ESP32 to control higher-power loads, such as the blower or other powered components, with a safe low-voltage control signal while isolating the logic circuit from the load circuit.
-
-### LM2596 DC-DC Buck Converter
-One LM2596 DC-DC buck converter is used to lower the battery voltage to the stable 5V or 3.3V levels required by the ESP32, sensors, and peripheral electronics. It helps protect the control system from overvoltage and keeps the power delivery stable during operation.
-
-### XL4016 PWM Buck Converter
-The second module is an XL4016 PWM buck converter, which is a higher-power adjustable DC-DC step-down regulator. It is used for a heavier current branch in the robot, allowing the system to power the main motor or another high-demand load while keeping the voltage within a safe operating range. This board is priced at about ৳420 and supports the high-load power path in the system.
 
 ### L298N Motor Driver
 The L298N driver modules allow the ESP32 to control DC motors and servos. They handle the current required by the motors, enabling safe and responsive movement of the robot and arm.
@@ -149,14 +132,11 @@ These high-torque servos power the three joints of the robotic arm. They enable 
 ### 12V DC Gear Motors
 The gear motors drive the robot’s wheels and provide traction for mobility. Their geared design supplies stable torque and speed for navigation across museum floors.
 
-### Li-Po Battery 4 Cell
-The 4-cell Li-Po battery pack is the main power source for the AURA robot. It stores electrical energy for the ESP32, sensor modules, blower fan, motor driver circuits, and arm actuators. The battery output is routed through the buck converters so the system receives stable voltage levels for both the logic and power branches.
-
 ### OLED Display
 The OLED screen shows real-time information such as battery status, sensor readings, and operating mode. It helps operators monitor the robot during use.
 
-### Aluminium Robotic Arm Kit
-The aluminium robotic arm kit provides a lightweight, durable structure for the robot arm. It supports the mounted sensors, nozzle, and servos while keeping the overall system compact.
+### Acrylic Robot Arm Kit
+The acrylic arm kit provides a lightweight, durable structure for the robot arm. It supports the mounted sensors, nozzle, and servos while keeping the overall system compact.
 
 ## Development Notes
 The system is built on a lightweight mobile chassis with a three-joint robotic arm. It uses sensors to detect both the artifact and dust before activating suction. A filter chamber and load sensor are included to collect and monitor dust.
@@ -167,23 +147,22 @@ We also considered ultrasonic cleaning because it would avoid physical contact, 
 ## Conclusion
 AURA aims to support the preservation of cultural heritage through safe, automated, and efficient artifact cleaning.
 
-Component	Function	How it Works	Image
-ESP32 Development Board	Main control unit	Runs the robot firmware, reads sensors, and controls motors and actuators; provides Wi-Fi/Bluetooth and GPIO access for the robot system	ESP32 Development Board
-VL53L0X Time-of-Flight Sensor	Distance sensing	Measures distance to the artifact using infrared light and returns precise range data	VL53L0X
-GP2Y1014AU0F Dust Sensor	Dust detection	Detects airborne dust particles using infrared light scattering and triggers cleaning when dust is present	Dust Sensor
-5015 Blower Fan	Suction source	Creates airflow through the nozzle and filter path to remove dust from the artifact area	Blower Fan
-L298N Motor Driver	Motor power control	Converts control signals from the ESP32 into higher-current motor drive outputs	L298N
-MG996R Servo Motor	Arm joint actuation	Provides torque for the shoulder, elbow, and wrist joints of the robotic arm	MG996R
-12V DC Gear Motor	Mobile drive	Drives the wheels of the mobile chassis with speed and torque suited for the robot base	DC Gear Motor
-Li-Po Battery 4 Cell	Power source	Supplies the main energy for the robot, feeding the control electronics, fan, motors, and sensor system through the buck converters	Li-Po Battery 4 Cell
-OLED Display (0.96" I2C)	Status display	Shows system status, sensor readings, and operational messages	OLED Display
-Aluminium Robotic Arm Kit	Structural frame	Provides the physical arm structure and mounting points for sensors and servos	Acrylic Arm
+Component	Function	How it Works	Price Range	Image
+ESP32 microcontroller	Main control unit	Runs the robot firmware, reads sensors, and controls motors and actuators	৳450 – ৳550	ESP32
+VL5303X Time-of-Flight Sensor	Distance sensing	Measures distance to the artifact using infrared light and returns precise range data	৳550 – ৳650	VL5303X
+GP2Y1014AU0F Dust Sensor	Dust detection	Detects airborne dust particles using infrared light scattering and triggers cleaning when dust is present	৳700 – ৳850	Dust Sensor
+5015 Blower Fan	Suction source	Creates airflow through the nozzle and filter path to remove dust from the artifact area	৳180 – ৳220	Blower Fan
+L298N Motor Driver	Motor power control	Converts control signals from the ESP32 into higher-current motor drive outputs	৳180 – ৳220	L298N
+MG996R Servo Motor	Arm joint actuation	Provides torque for the shoulder, elbow, and wrist joints of the robotic arm	৳650 – ৳750	MG996R
+12V DC Gear Motor	Mobile drive	Drives the wheels of the mobile chassis with speed and torque suited for the robot base	৳350 – ৳550	DC Gear Motor
+OLED Display (0.96" I2C)	Status display	Shows system status, sensor readings, and operational messages	৳320 – ৳400	OLED Display
+Acrylic Robot Arm Kit	Structural frame	Provides the physical arm structure and mounting points for sensors and servos	৳1,200 – ৳1,600	Acrylic Arm
 Component Descriptions
-ESP32 Development Board
-The ESP32 Development Board is the main controller of the AURA system. It executes the control logic, reads sensor data, and sends drive signals to the motors, servos, and relay modules. This board is used because it offers built-in Wi-Fi and Bluetooth, multiple GPIO pins, and a compact form factor suitable for a mobile robot system.
+ESP32 Microcontroller
+The ESP32 is the main controller of the AURA system. It executes the control logic, reads data from the sensors, and sends drive signals to the motors and servos.
 
-VL53L0X Time-of-Flight Sensor
-This sensor measures the distance to the artifact without contacting it. It uses a light pulse and timing measurement to determine the exact range, enabling the arm to maintain a safe cleaning distance.
+VL5303X Time-of-Flight Sensors
+These sensors measure the distance to the artifact without contacting it. They use a light pulse and timing measurement to determine the exact range, enabling the arm to maintain a safe cleaning distance.
 
 GP2Y1014AU0F Dust Sensor
 This optical dust sensor detects fine particles in the air near the artifact. When the sensor detects dust above a threshold, it signals the ESP32 to activate the vacuum system.
@@ -203,8 +182,8 @@ The gear motors drive the robot’s wheels and provide traction for mobility. Th
 OLED Display
 The OLED screen shows real-time information such as battery status, sensor readings, and operating mode. It helps operators monitor the robot during use.
 
-Aluminium Robotic Arm Kit
-The aluminium robotic arm kit provides a lightweight, durable structure for the robot arm. It supports the mounted sensors, nozzle, and servos while keeping the overall system compact.
+Acrylic Robot Arm Kit
+The acrylic arm kit provides a lightweight, durable structure for the robot arm. It supports the mounted sensors, nozzle, and servos while keeping the overall system compact.
 
 Development Notes
 The system is built on a lightweight mobile chassis with a three-joint robotic arm. It uses sensors to detect both the artifact and dust before activating suction. A filter chamber and load sensor are included to collect and monitor dust.
