@@ -2,7 +2,9 @@
 
 ## **Dust Free History**
 
-![AURA Logo](images/logo.jpg)
+<div align="center">
+  <img src="images/logo.jpg" alt="AURA Logo" width="200" height="200">
+</div>
 
 ## Table of Contents
 - [Dust Free History](#dust-free-history)
