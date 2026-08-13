@@ -87,11 +87,12 @@ AURA was built by combining a compact mobile base, a lightweight robotic arm, an
 4. Install the 5015 blower fan and connect it to the nozzle and filter path for suction.
 5. Connect the wheel motors and servos to the L298N motor drivers, then wire the drivers to the ESP32.
 6. Install the LM2596 DC-DC buck converter for the control electronics and the XL4016 PWM buck converter for the higher-power branch, ensuring both power rails are regulated safely.
-7. Attach the OLED display and configure it to show live system status and sensor readings.
-8. Verify the power wiring, then test the sensor readings, arm movement, and vacuum operation.
+7. Connect the 4-cell Li-Po battery pack to the power input and distribute regulated power to the ESP32, sensors, fan, and motor driver circuits.
+8. Attach the OLED display and configure it to show live system status and sensor readings.
+9. Verify the power wiring, then test the sensor readings, arm movement, and vacuum operation.
 
 ### How It Works
-AURA uses the ESP32 to monitor the distance sensors and dust sensor. When dust is detected, the controller activates the blower and moves the arm to clean the surface while keeping the nozzle at a safe distance. The mobile base allows the system to position itself near artifacts, and the OLED displays the current status.
+AURA uses the ESP32 to monitor the distance sensors and dust sensor. When dust is detected, the controller activates the blower and moves the arm to clean the surface while keeping the nozzle at a safe distance. The 4-cell Li-Po battery pack supplies the main energy to the system and the buck converters regulate stable voltage for the control and motor branches. The mobile base allows the system to position itself near artifacts, and the OLED displays the current status.
 
 ### Project Flow
 - Build → Connect → Test
@@ -112,6 +113,7 @@ AURA uses the ESP32 to monitor the distance sensors and dust sensor. When dust i
 | L298N Motor Driver | Motor power control | Converts control signals from the ESP32 into higher-current motor drive outputs | ৳180 – ৳220 | ![L298N](images/motor-driver.jpg) |
 | MG996R Servo Motor | Arm joint actuation | Provides torque for the shoulder, elbow, and wrist joints of the robotic arm | ৳650 – ৳750 | ![MG996R](images/servo-motor.jpg) |
 | 12V DC Gear Motor | Mobile drive | Drives the wheels of the mobile chassis with speed and torque suited for the robot base | ৳350 – ৳550 | ![DC Gear Motor](images/car.jpg) |
+| Li-Po Battery 4 Cell | Power source | Supplies the main energy for the robot, feeding the control electronics, fan, motors, and sensor system through the buck converters | ৳1,000 – ৳1,500 | ![Li-Po Battery 4 Cell](images/li-po%20battery%204%20cell.jpg) |
 | OLED Display (0.96" I2C) | Status display | Shows system status, sensor readings, and operational messages | ৳320 – ৳400 | ![OLED Display](images/display.jpg) |
 | Aluminium Robotic Arm Kit | Structural frame | Provides the physical arm structure and mounting points for sensors and servos | ৳1,200 – ৳1,600 | ![Acrylic Arm](images/arm.jpg) |
 
@@ -147,6 +149,9 @@ These high-torque servos power the three joints of the robotic arm. They enable 
 ### 12V DC Gear Motors
 The gear motors drive the robot’s wheels and provide traction for mobility. Their geared design supplies stable torque and speed for navigation across museum floors.
 
+### Li-Po Battery 4 Cell
+The 4-cell Li-Po battery pack is the main power source for the AURA robot. It stores electrical energy for the ESP32, sensor modules, blower fan, motor driver circuits, and arm actuators. The battery output is routed through the buck converters so the system receives stable voltage levels for both the logic and power branches.
+
 ### OLED Display
 The OLED screen shows real-time information such as battery status, sensor readings, and operating mode. It helps operators monitor the robot during use.
 
@@ -170,6 +175,7 @@ GP2Y1014AU0F Dust Sensor	Dust detection	Detects airborne dust particles using in
 L298N Motor Driver	Motor power control	Converts control signals from the ESP32 into higher-current motor drive outputs	L298N
 MG996R Servo Motor	Arm joint actuation	Provides torque for the shoulder, elbow, and wrist joints of the robotic arm	MG996R
 12V DC Gear Motor	Mobile drive	Drives the wheels of the mobile chassis with speed and torque suited for the robot base	DC Gear Motor
+Li-Po Battery 4 Cell	Power source	Supplies the main energy for the robot, feeding the control electronics, fan, motors, and sensor system through the buck converters	Li-Po Battery 4 Cell
 OLED Display (0.96" I2C)	Status display	Shows system status, sensor readings, and operational messages	OLED Display
 Aluminium Robotic Arm Kit	Structural frame	Provides the physical arm structure and mounting points for sensors and servos	Acrylic Arm
 Component Descriptions
