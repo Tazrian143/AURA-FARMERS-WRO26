@@ -126,7 +126,7 @@ The blower fan provides the suction force needed to pull dust particles through 
 One LM2596 DC-DC buck converter is used to lower the battery voltage to the stable 5V or 3.3V levels required by the ESP32, sensors, and peripheral electronics. It helps protect the control system from overvoltage and keeps the power delivery stable during operation.
 
 ### XL4016 PWM Buck Converter
-The second module is an XL4016 PWM buck converter, which is a higher-power adjustable DC-DC step-down regulator. It is used for a heavier current branch in the robot, allowing the system to power the main motor or another high-demand load while keeping the voltage within a safe operating range. This board is priced at around ৳420.
+The second module is an XL4016 PWM buck converter, which is a higher-power adjustable DC-DC step-down regulator. It is used for a heavier current branch in the robot, allowing the system to power the main motor or another high-demand load while keeping the voltage within a safe operating range. This board is priced at about ৳420 and supports the high-load power path in the system.
 
 ### L298N Motor Driver
 The L298N driver modules allow the ESP32 to control DC motors and servos. They handle the current required by the motors, enabling safe and responsive movement of the robot and arm.
