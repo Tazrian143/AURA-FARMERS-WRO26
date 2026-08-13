@@ -2,7 +2,9 @@
 
 ## **Dust Free History**
 
-![AURA Logo](https://github.com/Tazrian143/AURA-FARMERS-WRO26/blob/main/images/logo.jpg?raw=true)
+<div align="center">
+  ![AURA Logo](https://github.com/Tazrian143/AURA-FARMERS-WRO26/blob/main/images/logo.jpg?raw=true)
+</div>
 
 ## Table of Contents
 - [Dust Free History](#dust-free-history)
